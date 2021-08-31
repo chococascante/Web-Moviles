@@ -1,0 +1,173 @@
+main {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  background-color: #00241B;
+  display: flex;
+  align-items: center;  
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+
+.header > h3 {
+  font-size: 16px;
+  color: #65B891;
+}
+
+.header > nav > a, .header > nav > a:visited {
+  color: #65B891;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.header > nav> a:hover, .header > nav> a:focus {
+  color: #B5FFE1;
+  text-decoration: none;
+}
+
+.header > div > i {
+  color: #65B891;
+}
+
+.hero-banner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.hero-banner > p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  margin: 0;
+  transform: translate(-50%, -50%);
+  font-size: 2.4rem;
+}
+
+.hero-banner > img {
+  width: 100%;
+  height: 400px;
+}
+
+.grid {
+  width: 90%;
+  background-color: #00241B;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+}
+
+.grid > img {
+  width: 80%;
+  object-fit: contain;
+  aspect-ratio: 2 /1;
+}
+
+.flex-grid {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  width: 90%;
+  margin: 0 auto;
+  background-color: #4E878C;
+}
+
+.flex-grid > img {
+  width: calc(50% - 1rem);
+   aspect-ratio: 2 /1;
+}
+
+.carrusel {
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+}
+
+@media (max-width: 699px) {
+  .chevron-button {
+    display: none;
+  }
+
+  .dot-container {
+    display: none;
+  }
+
+  .carrusel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (min-width: 700px) {
+  .main-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 600px;
+    width: 30%;
+  }
+  
+  .carrusel-contenedor {
+    width: 100%;
+    display: flex;
+    height: 400px;
+    align-items: center;
+    position: relative;
+  }
+  
+  .chevron-left {
+    transform: rotate(-180deg);
+  }
+  
+  .chevron-button {
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 0;
+    cursor: pointer;
+    position: absolute;
+    z-index: 999;
+  }
+  
+  .chevron-button-right {
+    right: 0;
+  }
+  
+  .chevron-button-left {
+    left: 0;
+  }
+  
+  .chevron-button > i {
+    color: #fff;
+  }
+  
+  .dot-container {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    gap: 1px;
+  }
+  
+  .dot {
+    height: 4px;
+    width: 4px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+  }
+  
+  .dot:hover{
+    background-color: #fafafa;
+  }
+}
