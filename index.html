@@ -9,6 +9,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     />
   <link rel="stylesheet" href="./index.css">
+  <script src="index.js"></script>
   <title>Adopte su guatillo</title>
 </head>
 <body>
@@ -27,27 +28,38 @@
   </header>
   <main>
     <section class="carrusel-contenedor">
-      <button class="chevron-button chevron-button-left">
+      <button onclick="cambiarIndice(-1)" class="chevron-button chevron-button-left">
         <i class="fas fa-chevron-right chevron-left"></i>
       </button>
-      <ul class="carrusel">
-        <li class="hero-banner">
-          <p>Esto es un Hero Banner 🦸</p>
+      <ul id="carrusel" class="carrusel carrousel-height-definido">
+        <li class="hero-banner slide">
+          <p>Esto es un Hero Banner #1 🦸</p>
           <img src="https://wallpapercave.com/wp/wp9183914.jpg">
         </li>
 
-        <!-- <li class="hero-banner">
-          <p>Esto es un Hero Banner 🦸</p>
+        <li class="hero-banner slide">
+          <p>Esto es un Hero Banner #2 🦸</p>
           <img src="https://wallpapercave.com/wp/wp9183914.jpg">
-        </li> -->
+        </li>
+
+        <li class="hero-banner slide">
+          <p>Esto es un Hero Banner #3 🦸</p>
+          <img src="https://wallpapercave.com/wp/wp9183914.jpg">
+        </li>
+
+        <li class="hero-banner slide">
+          <p>Esto es un Hero Banner #4 🦸</p>
+          <img src="https://wallpapercave.com/wp/wp9183914.jpg">
+        </li>
       </ul>
-      <button class="chevron-button chevron-button-right">
+      <button id="ver-mas" class="ver-mas" onclick="manejarVerMas()">Ver más</button>
+      <button onclick="cambiarIndice(1)" class="chevron-button chevron-button-right">
         <i class="fas fa-chevron-right"></i>
       </button>
-      <ul class="dot-container">
+      <ul id="dot-container" class="dot-container">
+        <!-- <li class="dot"></li>
         <li class="dot"></li>
-        <li class="dot"></li>
-        <li class="dot"></li>
+        <li class="dot"></li> -->
       </ul>
     </section>
 
