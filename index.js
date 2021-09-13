@@ -36,25 +36,31 @@ function cambiarSlide(n) {
   const arregloSlides = [...slides]; // Array.from(arregloSlides);
   const dots = document.getElementById("dot-container").children;
   arregloSlides.forEach((slide, index) => {
-    if (index === indice) {
-      dots[index].classList.add("dot-active");
+    if (index === indice || index === indice + 1) {
       slide.style.display = "block";
     } else {
-      dots[index].classList.remove("dot-active");
       slide.style.display = "none";
     }
   });
+
+  for (let i = 0; i < dots.length; i++) {
+    if (i === indice) {
+      dots[i].classList.add("dot-active");
+    } else {
+      dots[i].classList.remove("dot-active");
+    }
+  }
 }
 
-function slideAnterior() {
-  indice = indice - 1;
-  cambiarSlide(indice);
-}
+// function slideAnterior() {
+//   indice = indice - 2;
+//   cambiarSlide(indice);
+// }
 
-function siguienteSlide() {
-  indice = indice + 1;
-  cambiarSlide(indice);
-}
+// function siguienteSlide() {
+//   indice = indice + 2;
+//   cambiarSlide(indice);
+// }
 
 function cambiarIndice(n) {
   cambiarSlide((indice += n));
@@ -66,7 +72,7 @@ function renderDots() {
 
   const dotContainer = document.getElementById("dot-container");
 
-  for (let i = 0; i < numeroDeSlides; i++) {
+  for (let i = 0; i < numeroDeSlides / 2; i++) {
     const dot = document.createElement("li");
     dot.addEventListener("click", () => cambiarSlide(i));
     dot.classList.add("dot");
@@ -77,20 +83,31 @@ function renderDots() {
 function autoplay() {
   yaHizoAutoPlay = true;
   intervalId = setInterval(() => {
-    cambiarSlide(indice + 1);
+    cambiarSlide(indice + 2);
   }, 2000);
 }
 
 function shouldAutoPlay() {
+  const slides = document.getElementsByClassName("slide");
+
   if (window.innerWidth >= 700 && !yaHizoAutoPlay) {
-    autoplay();
+    // autoplay();
+    cambiarSlide(0);
   } else if (window.innerWidth < 700 && yaHizoAutoPlay) {
     clearInterval(intervalId);
-    const slides = document.getElementsByClassName("slide");
+
     for (let i = 0; i < slides.length; i++) {
       slides[i].style.display = "block";
     }
     yaHizoAutoPlay = false;
+  }
+
+  if (slides.length <= 2) {
+    const flechas = document.getElementsByClassName("chevron-button");
+
+    for (let i = 0; i < dots.length; i++) {
+      flechas[i].style.display = "none";
+    }
   }
 }
 

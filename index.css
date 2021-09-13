@@ -35,7 +35,7 @@ main {
 }
 
 .hero-banner {
-  width: 100%;
+  
   height: 100%;
   position: relative;
 }
@@ -129,6 +129,9 @@ main {
     font-weight: bold;
     cursor: pointer;
   }
+  .hero-banner{
+    width: 100%;
+  }
 }
 
 @media (min-width: 700px) {
@@ -138,6 +141,12 @@ main {
     justify-content: space-between;
     max-width: 600px;
     width: 30%;
+  }
+
+  .carrusel {
+    display: flex;
+    align-items: center;
+    gap: 20px;
   }
   
   .carrusel-contenedor {
@@ -200,5 +209,9 @@ main {
   }
   .ver-mas {
     display: none;
+  }
+
+  .hero-banner{
+    width: 45%;
   }
 }
