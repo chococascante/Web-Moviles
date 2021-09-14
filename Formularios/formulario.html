@@ -1,12 +1,103 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./formulario.css">
+  <script src="./formulario.js"></script>
+  <title>Formulario</title>
 </head>
 <body>
-  
+  <main>
+    <h1>Formulario de matrícula</h1>
+    <form id="formulario-matricula">
+      <div class="input">
+        <label>Nombre</label>
+        <input required autocomplete id="input-nombre" type="text" name="nombre" placeholder="Juanito Mechas">
+      </div>
+      
+      <div class="input">
+        <label>Carnet</label>
+        <input required autocomplete id="input-carnet" type="text" name="carnet" placeholder="2222222222">
+      </div>
+
+      <div class="input">
+        <label>Correo electrónico</label>
+        <input required autocomplete id="input-correo" type="email" name="carnet" placeholder="ejemplo@dominio.com">
+      </div>
+
+      <div class="input">
+        <label>Carrera</label>
+        <select name="carrera" required id="input-carrera">
+          <option value="">Seleccione una carrera</option>
+          <option>Informática</option>
+          <option>Negocios</option>
+          <option>Relaciones Internacionales</option>
+          <option>Física</option>
+          <option>Administración</option>
+        </select>
+      </div>
+
+      <div class="input">
+        <label>Horario</label>
+        <div class="formulario-horarios">
+          <div class="formulario-horarios-fila">
+            <input required type="radio" name="horario" value="1" id="horarioDiurno">
+            <label for="horarioDiurno">Diurno</label>
+          </div>
+          <div class="formulario-horarios-fila">
+            <input type="radio" name="horario" value="2" id="horarioNocturno">
+            <label for="horarioNocturno">Nocturno</label>
+          </div>
+        </div>
+      </div>
+      
+      <div class="input">
+        <label>Fecha de nacimiento</label>
+        <input name="fecha-nacimiento" type="date">
+      </div>
+
+      <div class="input">
+        <label>Estado Civil</label>
+        <select required name="estado-civil">
+          <option value="">Seleccione un estado civil</option>
+          <option value="soltero">Soltero</option>
+          <option value="casado">Casado</option>
+          <option value="divorciado">Divorciado</option>
+          <option value="viudo">Viudo</option>
+        </select>
+      </div>
+
+      <div class="input">
+        <label>Género</label>
+        <select required name="genero">
+          <option value="">Seleccione un género</option>
+          <option value="masculino">Masculino</option>
+          <option value="femenino">Femenino</option>
+          <option value="otro">Otro</option>
+        </select>
+      </div>
+
+      <div class="input">
+        <label>Número de teléfono</label>
+        <input required name="numero-telefono" autocomplete type="tel" placeholder="2222-2222" pattern="[0-9]{4}-[0-9]{4}">
+      </div>
+
+      <div class="input">
+      <label>Lista de materias</label>
+      <select>
+        <option value="">Agregue materias</option>
+          <option value="calculo">Cálculo</option>
+      </select>
+
+      
+    </div>
+    <button disabled id="boton-enviar" type="submit">Enviar</button>
+    </form>
+  </main>
 </body>
 </html>
